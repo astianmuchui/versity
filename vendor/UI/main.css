@@ -1,0 +1,225 @@
+:root{
+   --theme-color: #ffffff;
+   --palette-color: #2fa4e7;
+   --border-color : #13577e;
+   --background-color: #000;
+   --theme-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif,monospace;
+   
+}
+/* Globals */
+*{
+   background-repeat: no-repeat;
+   text-decoration: none;
+   font-family: "Sofia",monospace;
+   font-weight: 200;
+   background-position: center,center;
+   text-decoration: none;
+   background-size: cover;
+   overflow-x: hidden;
+   color: rgb(255, 255, 255);
+   box-sizing: border-box;
+   list-style-type: none;
+   transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+a{
+   color: #fff;
+}
+body{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   width: 100%;
+   background: url("../img/458783.jpg") no-repeat center center/cover;
+   height: 100vh;
+   z-index: -1;
+}
+.flex-column{
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+   justify-items: center;
+}
+.foundation{
+   background-color: rgba(0, 0, 0, 0.902);
+   height: 100vh;
+   width: 100vw;
+   z-index: 1;
+}
+.foundation header{
+   padding: 3px;
+   margin-left: 10%;
+   width: 80%;
+   height: 80px;
+   overflow: hidden;
+   margin-top: 20px;
+   display: inline-flex; 
+}
+.foundation header nav{
+   margin-left: 55%;
+}
+.foundation>header nav ul {
+   display: inline-flex;
+   
+}
+.foundation > header nav ul li:nth-child(odd) a{
+   color: var(--palette-color);
+}
+.foundation > header nav ul li:nth-child(odd) a:hover{
+   color: var(--theme-color);
+}
+.foundation > header nav ul li:nth-child(even) a:hover{
+   color: var(--palette-color);
+}
+.foundation > header nav ul li{
+   padding-left: 20px;
+   padding-top: 10px;
+}
+
+
+.foundation > header p{
+   font-size: 20px;
+   font-weight: bold;
+   font-style: normal;
+}
+
+.foundation .branding{
+   width: 70%;
+   height: 40vw;
+   background-color: rgba(2, 2, 2, 0.753);
+   border-radius: 5px;
+   box-shadow: 0px 0.5px 0px 0.5px var(--border-color);
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-gap: 10px;
+   padding: 5px 15px;
+}
+.foundation .branding article {
+   
+   width: 90%;
+   font-size: 40px;
+   font-style: normal;
+}
+.foundation .branding article p{
+   position: relative;
+   top: 80px;
+   height: 300px;
+   opacity: 0;
+   animation: rise 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards 1;
+   animation-delay: 1s;
+}
+.foundation .branding article a{
+   font-size: 15px;
+   padding: 10px;
+   border: 1px solid var(--border-color);
+   position: relative;
+   opacity: 0;
+   animation: slide 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
+   animation-delay: 3s;
+   font-weight: 100;
+}
+.foundation .branding article a:hover{
+   background-color: var(--palette-color);
+}
+.foundation .branding .img-container{
+   opacity: 0;
+   animation: slideRight 2s ease-out forwards 1;
+   animation-delay: 3.5s;
+}
+/* Animation */
+@keyframes rise{
+   0%{
+      opacity: 0;
+      top: 120px;
+   }
+   100%{
+      opacity: 1;
+      top: 80px;
+   }
+}
+@keyframes slide{
+   0%{
+      opacity: 0;
+      left: -60px;
+   }
+   100%{
+      opacity: 1;
+      left: 0;
+   }
+}
+@keyframes slideUp{
+   0%{
+      opacity: 0;
+      top: 170px;
+   }
+   100%{
+      opacity: 1;
+      top: 150px;
+   }
+}
+@keyframes slideRight{
+   0%{
+      opacity: 0;
+      right: -60px;
+   }
+   100%{
+      opacity: 1;
+      right: 0;
+   }
+}
+.foundation .branding .img-container{
+   width: 100%;
+   transform: rotateX(-10deg);
+}
+
+.foundation .branding h3{
+   position: relative;
+   left: 30px;
+   top: 20px;
+   font-style: normal;
+   font-size: 28px;
+   animation: slide 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
+   opacity: 0;
+}
+
+.foundation .branding form{
+   position: relative;
+   top: 150px;
+   left: -50px;
+   display: inline;
+   width: 500px;
+   height: 300px;
+   opacity: 0;
+   animation: slideUp 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1;
+   animation-delay: 1.5s;
+}
+
+::placeholder{
+   color: var(--palette-color);
+}
+
+.foundation .branding form input{
+   box-shadow: 0;
+   color: var(--palette-color);
+   border: none;
+   z-index: 0;
+   border-bottom: 1px  dotted var(--palette-color);
+   width: 450px;
+   background-color: rgba(0, 0, 0, 0.11);
+   text-align: center;
+   height: 60px;
+   padding: 5px;
+   margin-bottom: 30px;
+}
+
+.foundation .branding form input:hover ,
+.foundation .branding form input:checked,
+.foundation .branding form input:active{
+   box-shadow: 0;
+   
+}
+.foundation .branding form input:nth-child(3){
+   background-color: var(--palette-color);
+   color: black;
+}

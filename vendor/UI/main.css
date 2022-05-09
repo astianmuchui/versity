@@ -40,6 +40,7 @@ body{
    justify-content: center;
    align-items: center;
    justify-items: center;
+
 }
 .foundation{
    background-color: rgba(0, 0, 0, 0.902);
@@ -222,4 +223,70 @@ body{
 .foundation .branding form input:nth-child(3){
    background-color: var(--palette-color);
    color: black;
+}
+
+
+/* Profile.html */
+
+.foundation .profile-wrapper{
+   text-align: center;
+   width: 70%;
+   height: 40vw;
+   background-color: rgba(2, 2, 2, 0.753);
+   border-radius: 5px;
+   box-shadow: 0px 0.5px 0px 0.5px var(--border-color);
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   grid-gap: 10px;
+   padding: 5px 15px;
+   box-sizing: border-box;
+   padding: 10px;
+}
+.foundation .profile-wrapper .bio-container i{
+   color: var(--palette-color);
+   width: 15px;
+}
+.foundation .profile-wrapper .bio-container{
+      width: 100%;
+
+}
+.foundation .profile-wrapper .bio-container .unm{
+   color: var(--palette-color);
+}
+.foundation .profile-wrapper .bio-container small{
+   margin-bottom: 5px;
+   margin-top: 3px;
+}
+
+/* Add animations */
+.foundation .profile-wrapper .bio-container img{
+   /* position: relative; */
+   opacity: 0;
+   animation: fall 1s cubic-bezier(0.86,0, 0.07, 1) forwards 1;
+   
+
+}
+.foundation .profile-wrapper .bio-container h4{
+   opacity: 0;
+   animation: fall 1s cubic-bezier(0.86, 0, 0.07, 1) forwards 1;
+   animation-delay: 1s;
+}
+
+.foundation .profile-wrapper .bio-container .bio-data{
+   animation: fade 1s cubic-bezier(0.86, 0, 0.07, 1) forwards 1;
+
+}
+
+
+@keyframes fall{
+   0%{
+      position: relative;
+      top: -20px;
+      opacity: 0;
+   }
+   100%{
+      top: 0;
+      opacity: 1;
+   }
+
 }
